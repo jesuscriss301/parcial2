@@ -5,9 +5,9 @@
 package com.ufps.mundial.repository;
 
 
-import com.teacher.test.entities.User;
+import com.ufps.mundial.model.Seleccion;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface SelectcionRepository  extends JpaRepository<User, Integer> {
+public interface SeleccionRepository  extends JpaRepository<Seleccion, Integer> {
     
 }

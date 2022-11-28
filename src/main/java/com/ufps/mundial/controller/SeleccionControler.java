@@ -4,8 +4,9 @@
  */
 package com.ufps.mundial.controller;
 
-import com.teacher.test.entities.Assessment;
-import com.teacher.test.repository.AssessmentRepository;
+
+import com.ufps.mundial.model.Seleccion;
+import com.ufps.mundial.repository.SeleccionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,58 +27,58 @@ import java.util.Optional;
 @RequestMapping("/assessments")
 public class SeleccionControler {
     @Autowired
-    UserRepository userRepo;
+    SeleccionRepository seleccionRepo;
 
     @GetMapping
-    public List<User> getUserAll() {
-        return userRepo.findAll();
+    public List<Seleccion> getSeleccionAll() {
+        return seleccionRepo.findAll();
     }
 
     @GetMapping("/{id}")
-    public User getUsersbyId(@PathVariable Integer id) {
-        Optional<User> user = userRepo.findById(id);
+    public Seleccion getSeleccionsbyId(@PathVariable Integer id) {
+        Optional<Seleccion> seleccion = seleccionRepo.findById(id);
 
-        if (user.isPresent()) {
-            return user.get();
+        if (seleccion.isPresent()) {
+            return seleccion.get();
         }
 
         return null;
     }
 
     @PostMapping
-    public User postUsers(@RequestBody User user) {
-        userRepo.save(user);
-        return user;
+    public Seleccion postSeleccions(@RequestBody Seleccion seleccion) {
+        seleccionRepo.save(seleccion);
+        return seleccion;
     }
 
 
     @PutMapping("/{id}")
-    public User putUsersbyId(@PathVariable Integer id, @RequestBody User user) {
-        Optional<User> userCurrent = userRepo.findById(id);
+    public Seleccion putSeleccionsbyId(@PathVariable Integer id, @RequestBody Seleccion seleccion) {
+        Optional<Seleccion> seleccionCurrent = seleccionRepo.findById(id);
 
-        if (userCurrent.isPresent()) {
-            User userReturn = userCurrent.get();
-            userReturn.setUserName(user.getUserName());
-            userReturn.setUserCode(user.getUserCode());
-            userReturn.setIdentifyCardNumber(user.getIdentifyCardNumber());
-            userReturn.setEmail(user.getEmail());
-            userReturn.setPassword(user.getPassword());
-            userReturn.setAdmin(user.isAdmin());
-            userRepo.save(userReturn);
-            return userReturn;
+        if (seleccionCurrent.isPresent()) {
+            Seleccion seleccionReturn = seleccionCurrent.get();
+            seleccionReturn.setSeleccionName(seleccion.getSeleccionName());
+            seleccionReturn.setSeleccionCode(seleccion.getSeleccionCode());
+            seleccionReturn.setIdentifyCardNumber(seleccion.getIdentifyCardNumber());
+            seleccionReturn.setEmail(seleccion.getEmail());
+            seleccionReturn.setPassword(seleccion.getPassword());
+            seleccionReturn.setAdmin(seleccion.isAdmin());
+            seleccionRepo.save(seleccionReturn);
+            return seleccionReturn;
         }
 
         return null;
     }
 
     @DeleteMapping("/{id}")
-    public User deleteUsersbyId(@PathVariable Integer id) {
-        Optional<User> user = userRepo.findById(id);
+    public Seleccion deleteSeleccionsbyId(@PathVariable Integer id) {
+        Optional<Seleccion> seleccion = seleccionRepo.findById(id);
 
-        if (user.isPresent()) {
-            User userReturn = user.get();
-            userRepo.deleteById(id);
-            return userReturn;
+        if (seleccion.isPresent()) {
+            Seleccion seleccionReturn = seleccion.get();
+            seleccionRepo.deleteById(id);
+            return seleccionReturn;
         }
 
         return null;
