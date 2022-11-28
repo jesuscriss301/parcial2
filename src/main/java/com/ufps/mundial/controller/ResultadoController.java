@@ -52,7 +52,11 @@ public class ResultadoController {
 
         if (resultadoCurrent.isPresent()) {
             Resultado resultadoReturn = resultadoCurrent.get();
-            resultadoReturn.setNombre(resultado.getNombre());
+            resultadoReturn.setPartido_id(resultado.getPartido_id());
+            resultadoReturn.setSeleccion_id(resultado.getSeleccion_id());
+            resultadoReturn.setGoles(resultado.getGoles());
+            resultadoReturn.setAmarillas(resultado.getAmarillas());
+            resultadoReturn.setRojas(resultado.getRojas());
 
             resultadoRepo.save(resultadoReturn);
             return resultadoReturn;
