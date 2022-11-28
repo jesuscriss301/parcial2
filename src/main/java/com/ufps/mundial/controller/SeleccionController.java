@@ -24,8 +24,8 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/assessments")
-public class SeleccionControler {
+@RequestMapping("/selecciones")
+public class SeleccionController {
     @Autowired
     SeleccionRepository seleccionRepo;
 
