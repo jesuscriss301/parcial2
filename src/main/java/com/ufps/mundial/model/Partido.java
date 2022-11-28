@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.ufps.mundial.model;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,15 +15,20 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name="continente")
+@Table(name="seleccion")
 @Data
-public class Continente {
-
+public class Partido {
+    
     @Id
-    @SequenceGenerator(name="continente_id_seq", allocationSize=1)
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="user_id_seq")
+    @SequenceGenerator(name="partido_id_seq", allocationSize=1)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="partido_id_seq")
     private Integer id;
 
-    private String nombre;
+    private Date fecha;
 
+    private int userCode;
+    
+    @OneToOne
+    private Integer estadio_id;
+    
 }

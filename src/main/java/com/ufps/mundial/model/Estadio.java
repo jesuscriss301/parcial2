@@ -14,15 +14,18 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name="continente")
+@Table(name="seleccion")
 @Data
-public class Continente {
-
+public class Estadio {
+    
     @Id
-    @SequenceGenerator(name="continente_id_seq", allocationSize=1)
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="user_id_seq")
+    @SequenceGenerator(name="estadio_id_seq", allocationSize=1)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="estadio_id_seq")
     private Integer id;
 
     private String nombre;
 
+    private Integer capacida;
+    
+    
 }

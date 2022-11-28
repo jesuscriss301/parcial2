@@ -19,7 +19,7 @@ import lombok.Data;
 public class Seleccion {
     
     @Id
-    @SequenceGenerator(name="user_id_seq", allocationSize=1)
+    @SequenceGenerator(name="seleccion_id_seq", allocationSize=1)
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="user_id_seq")
     private Integer id;
 
