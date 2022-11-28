@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -22,15 +23,13 @@ public class Seleccion {
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="user_id_seq")
     private Integer id;
 
-    private String userName;
+    private String nombre;
 
     private int userCode;
+    
+    @OneToOne
+    private Integer continente_id;
 
-    private int identifyCardNumber;
+    private String grupo;
 
-    private String email;
-
-    private String password;
-
-    private boolean isAdmin;
 }

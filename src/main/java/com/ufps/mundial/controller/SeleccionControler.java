@@ -58,12 +58,10 @@ public class SeleccionControler {
 
         if (seleccionCurrent.isPresent()) {
             Seleccion seleccionReturn = seleccionCurrent.get();
-            seleccionReturn.setSeleccionName(seleccion.getSeleccionName());
-            seleccionReturn.setSeleccionCode(seleccion.getSeleccionCode());
-            seleccionReturn.setIdentifyCardNumber(seleccion.getIdentifyCardNumber());
-            seleccionReturn.setEmail(seleccion.getEmail());
-            seleccionReturn.setPassword(seleccion.getPassword());
-            seleccionReturn.setAdmin(seleccion.isAdmin());
+            seleccionReturn.setNombre(seleccion.getNombre());
+            seleccionReturn.setContinente_id(seleccion.getContinente_id());
+            seleccionReturn.setGrupo(seleccion.getGrupo());
+
             seleccionRepo.save(seleccionReturn);
             return seleccionReturn;
         }
