@@ -2,9 +2,8 @@ package com.ufps.mundial.controller;
 
 
 import com.ufps.mundial.model.Continente;
-import com.ufps.mundial.model.Seleccion;
 import com.ufps.mundial.repository.ContinenteRepository;
-import com.ufps.mundial.repository.SeleccionRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,7 +21,7 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/selecciones")
+@RequestMapping("/Continentes")
 public class ContinenteController {
     @Autowired
     ContinenteRepository continenteRepo;
